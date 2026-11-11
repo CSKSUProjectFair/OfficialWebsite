@@ -1,0 +1,653 @@
+:root {
+    --primary-color: #0b1120;
+    --secondary-color: #3ce3d4;
+    --accent-magenta: #ff2a8d; /* Pink color extracted from 2nd edition logo */
+    --header-bg: #ffffff;         
+    --header-text: #0b1120;      
+    --bg-color: #f4f7f6;
+    --text-color: #222222;
+    --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #07090f;
+    --text-color: #e0e0e0;
+    --card-bg: #111522;
+    --header-bg: #111522;
+    --header-text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 15px rgba(60, 227, 212, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    width: 160px;
+    height: auto;
+}
+
+.logo-edition2 {
+    max-height: 55px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: 700;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(60, 227, 212, 0.4);
+}
+
+.nav-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-right: 2px solid #ccc;
+    padding-right: 15px;
+}
+
+html[dir="ltr"] .nav-controls {
+    border-right: none;
+    border-left: 2px solid #ccc;
+    padding-right: 0;
+    padding-left: 15px;
+}
+
+[data-theme="dark"] .nav-controls {
+    border-color: #333;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] .icon-btn {
+    color: var(--secondary-color);
+}
+
+.icon-btn:hover {
+    transform: scale(1.2);
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(60, 227, 212, 0.5);
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a1033 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    border-bottom: 3px solid var(--secondary-color);
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px rgba(60, 227, 212, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* =========================================
+   Edition Portal Cards (Landing Page)
+   ========================================= */
+.edition-selection-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.edition-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 35px 25px;
+    width: 340px;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.edition-1-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 15px 30px rgba(60, 227, 212, 0.3);
+}
+
+.edition-2-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-magenta);
+    box-shadow: 0 15px 30px rgba(255, 42, 141, 0.3);
+}
+
+.edition-card-badge {
+    background-color: rgba(60, 227, 212, 0.15);
+    color: var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+[data-theme="dark"] .edition-card-badge {
+    color: var(--secondary-color);
+}
+
+.magenta-badge {
+    background-color: rgba(255, 42, 141, 0.15) !important;
+    color: var(--accent-magenta) !important;
+}
+
+.edition-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .edition-card h2 {
+    color: #fff;
+}
+
+.edition-card p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.portal-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* =========================================
+   Details and Stats
+   ========================================= */
+.edition-details {
+    padding: 60px 0;
+    background-color: var(--card-bg);
+    transition: background-color 0.3s;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+[data-theme="dark"] .section-title {
+    color: var(--secondary-color);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #111522 100%);
+    color: white;
+    padding: 25px 40px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 220px;
+    border-bottom: 4px solid var(--secondary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(60, 227, 212, 0.2);
+}
+
+.stat-box h3 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(60, 227, 212, 0.4);
+}
+
+.stat-box p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.courses-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.courses-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+}
+
+[data-theme="dark"] .courses-title {
+    color: #fff;
+}
+
+.courses-list {
+    list-style: none;
+    padding: 0;
+}
+
+.courses-list li {
+    background-color: var(--bg-color);
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-right: 4px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+html[dir="ltr"] .courses-list li {
+    border-right: none;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.course-code {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    min-width: 90px;
+    text-align: center;
+}
+
+/* =========================================
+   Projects Section
+   ========================================= */
+.projects-section {
+    padding: 60px 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .project-card {
+    border-color: #222;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(60, 227, 212, 0.2);
+    border-color: var(--secondary-color);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.badge {
+    background-color: rgba(60, 227, 212, 0.15);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid rgba(60, 227, 212, 0.3);
+}
+
+[data-theme="dark"] .badge {
+    color: var(--secondary-color);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+[data-theme="dark"] .project-card h3 {
+    color: var(--secondary-color);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.team {
+    font-size: 0.9rem;
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-right: 3px solid var(--primary-color);
+}
+
+html[dir="ltr"] .team {
+    border-right: none;
+    border-left: 3px solid var(--primary-color);
+}
+
+[data-theme="dark"] .team {
+    border-color: var(--secondary-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(60, 227, 212, 0.5);
+}
+
+[data-theme="dark"] .btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .btn:hover {
+    background-color: #ffffff;
+}
+
+/* =========================================
+   Edition 2 Theme Customization
+   ========================================= */
+.edition-2-theme {
+    --primary-color: #0b0e40;
+    --secondary-color: #4be1e6;       /* السماوي/الفيروزي المضيء الصحيح للشعار */
+    --accent-magenta: #ff2a8d;        
+}
+
+.edition-2-theme header {
+    box-shadow: 0 2px 15px rgba(75, 225, 230, 0.15);
+}
+
+.hero-edition2 {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #150f2b 100%);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.hero-edition2 h1 {
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px rgba(75, 225, 230, 0.4);
+}
+
+.section-title-edition2 {
+    color: var(--secondary-color) !important;
+}
+
+.edition-2-theme .stat-box {
+    border-bottom: 4px solid var(--secondary-color) !important;
+}
+
+.edition-2-theme .stat-box h3 {
+    color: var(--secondary-color) !important;
+    text-shadow: 0 0 10px rgba(75, 225, 230, 0.4);
+}
+
+.badge-magenta {
+    background-color: rgba(255, 42, 141, 0.15);
+    color: var(--accent-magenta);
+    border: 1px solid rgba(255, 42, 141, 0.3);
+}
+
+.edition-2-theme .courses-list li {
+    border-right: 4px solid var(--secondary-color);
+}
+
+html[dir="ltr"] .edition-2-theme .courses-list li {
+    border-right: none;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.edition-2-theme .course-code {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.edition-2-theme .btn-magenta {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.edition-2-theme .btn-magenta:hover {
+    background-color: #35c7cd !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(75, 225, 230, 0.5) !important;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 2px solid var(--secondary-color);
+}
+
+.linkedin-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: text-shadow 0.3s;
+}
+
+.linkedin-link:hover {
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.linkedin-link-edition2 {
+    color: var(--secondary-color);
+}
+
+.linkedin-link-edition2:hover {
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* =========================================
+   Responsive Media Queries
+   ========================================= */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-controls {
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    [data-theme="dark"] .nav-controls {
+        border-top-color: #333;
+    }
+    html[dir="ltr"] .nav-controls {
+        border-left: none;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .stats-container {
+        gap: 15px;
+    }
+    .stat-box {
+        min-width: 100%;
+    }
+    .courses-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+countdown-section {
+    margin-top: 40px;
+    background: rgba(11, 17, 32, 0.4);
+    border: 1px solid rgba(60, 227, 212, 0.3);
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    backdrop-filter: blur(10px);
+}
+
+.countdown-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: var(--card-bg, #111522);
+    border: 2px solid var(--secondary-color);
+    border-radius: 12px;
+    padding: 12px 18px;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(60, 227, 212, 0.15);
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.time-box p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-top: 4px;
+    color: var(--text-color);
+}

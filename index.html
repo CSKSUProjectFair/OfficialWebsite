@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ar="معرض العالمات | KSU" data-en="Computer Scientists Fair | KSU">معرض العالمات | KSU</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="welcome-page">
+
+    <header>
+        <div class="container header-content">
+             <a href="index.html">
+                <img src="https://raw.githubusercontent.com/CSKSUProjectFair/logos/main/300px.png" alt="شعار معرض العالمات" class="logo">
+             </a>
+            <nav>
+                <div class="nav-controls" style="border: none;">
+                    <button id="lang-toggle" class="icon-btn">EN</button>
+                    <button id="theme-toggle" class="icon-btn">🌙</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero portal-hero">
+        <div class="container">
+            <h1 data-ar="أهلاً بكم في معرض عالمات الحاسب 🌟" data-en="Welcome to Computer Scientists Fair 🌟">أهلاً بكم في معرض عالمات الحاسب 🌟</h1>
+            <p data-ar="مبادرة من طالبات قسم علوم الحاسب بجامعة الملك سعود لاستعراض المخرجات والمشاريع المتميزة لمقررات القسم." data-en="An initiative by Computer Science students at KSU showcasing outstanding course projects.">مبادرة من طالبات قسم علوم الحاسب بجامعة الملك سعود لاستعراض المخرجات والمشاريع المتميزة لمقررات القسم.</p>
+            
+            <!-- عداد النسخة الثالثة التنازلي -->
+            <div class="countdown-section">
+                <h3 data-ar="⏳ العداد التنازلي لانطلاق النسخة الثالثة (3 ديسمبر - 10:00 صباحاً)" data-en="⏳ Countdown to the 3rd Edition Launch (Dec 3 - 10:00 AM)">⏳ العداد التنازلي لانطلاق النسخة الثالثة (3 ديسمبر - 10:00 صباحاً)</h3>
+                <div id="countdown-timer" class="countdown-timer">
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <p data-ar="يوم" data-en="Days">يوم</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <p data-ar="ساعة" data-en="Hours">ساعة</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <p data-ar="دقيقة" data-en="Minutes">دقيقة</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <p data-ar="ثانية" data-en="Seconds">ثانية</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 35px; font-size: 1.1rem; font-weight: 500;" data-ar="اختر نسخة المعرض للتصفح:" data-en="Select an edition to explore:">اختر نسخة المعرض للتصفح:</p>
+
+            <div class="edition-selection-grid">
+                <a href="edition1.html" class="edition-card edition-1-card">
+                    <div class="edition-card-badge" data-ar="النسخة الأولى" data-en="1st Edition">النسخة الأولى</div>
+                    <h2 data-ar="معرض العالمات - النسخة 01" data-en="CS Fair - Edition 01">معرض العالمات - النسخة 01</h2>
+                    <p data-ar="استعراض 11 مشروعاً مميزاً مشاركاً من 5 مقررات دراسية." data-en="Explore 11 featured projects across 5 courses.">استعراض 11 مشروعاً مميزاً مشاركاً من 5 مقررات دراسية.</p>
+                    <span class="btn portal-btn" data-ar="دخول النسخة الأولى ←" data-en="Enter 1st Edition →">دخول النسخة الأولى ←</span>
+                </a>
+
+                <a href="edition2.html" class="edition-card edition-2-card">
+                    <div class="edition-card-badge magenta-badge" data-ar="النسخة الثانية" data-en="2nd Edition">النسخة الثانية</div>
+                    <h2 data-ar="معرض العالمات - النسخة 02" data-en="CS Fair - Edition 02">معرض العالمات - النسخة 02</h2>
+                    <p data-ar="استكشاف المشاريع والإنجازات الجديدة للنسخة الثانية." data-en="Explore new projects and achievements for the 2nd edition.">استكشاف المشاريع والإنجازات الجديدة للنسخة الثانية.</p>
+                    <span class="btn portal-btn btn-magenta" data-ar="دخول النسخة الثانية ←" data-en="Enter 2nd Edition →">دخول النسخة الثانية ←</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><span data-ar="جميع الحقوق محفوظة &copy; " data-en="All rights reserved &copy; ">جميع الحقوق محفوظة &copy; </span><span id="year"></span> | <span data-ar="معرض العالمات - جامعة الملك سعود" data-en="Computer Scientists Fair - KSU">معرض العالمات - جامعة الملك سعود</span></p>
+            <a href="https://www.linkedin.com/company/ksu-cs-fair-maarad-aalimat-alhasib" target="_blank" class="linkedin-link" data-ar="تابعونا على LinkedIn" data-en="Follow us on LinkedIn">تابعونا على LinkedIn</a>
+         <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;" data-ar="صُنع بحب لدعم إبداعاتكم 💙 — فريق معرض عالمات الحاسب&nbsp;👩🏻‍💻&rlm;" data-en="Made with love to support your creativity 💙 — Computer Scientists Fair Team 👩🏻‍💻">صُنع بحب لدعم إبداعاتكم 💙 — فريق معرض عالمات الحاسب&nbsp;👩🏻‍💻&rlm;</p>
+        </div> 
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
